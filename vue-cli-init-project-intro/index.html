@@ -1,0 +1,194 @@
+<!DOCTYPE HTML><html lang="zh-CN"><head><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="keywords" content="vue-cli 构建 vue 项目详解, Deepspace, Deepspace"><meta name="description" content="
+构建一个 vue 项目最简单的方式就是使用脚手架工具 vue-cli 。前端的三大框架都有自己的脚手架工具，其作用就是用配置好的模板迅速搭建起一个项目工程来，省去自己配置 webpack 配置文件的基本内容，大大降低了初学者构建项目的难度"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>vue-cli 构建 vue 项目详解 | Deepspace</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><script src="/libs/jquery/jquery-2.2.0.min.js"></script><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="container"><div class="nav-wrapper"><div class="brand-logo"> <a href="/" class="waves-effect waves-light"><span><span class="logo-span">Deepspace</span></span></a></div><a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a><ul class="right"><li class="hide-on-med-and-down"><a href="/" class="waves-effect waves-light"><i class="fa fa-home"></i> <span>首页</span></a></li><li class="hide-on-med-and-down"><a href="/tags" class="waves-effect waves-light"><i class="fa fa-tags"></i> <span>标签</span></a></li><li class="hide-on-med-and-down"><a href="/categories" class="waves-effect waves-light"><i class="fa fa-bookmark"></i> <span>分类</span></a></li><li class="hide-on-med-and-down"><a href="/archives" class="waves-effect waves-light"><i class="fa fa-archive"></i> <span>归档</span></a></li><li class="hide-on-med-and-down"><a href="/about" class="waves-effect waves-light"><i class="fa fa-user-circle-o"></i> <span>关于</span></a></li><li><a id="toggleSearch" class="waves-effect waves-light"><i id="searchIcon" class="mdi-action-search"></i></a></li></ul><div class="side-nav" id="mobile-nav"><div class="mobile-head bg-color"><div class="logo-name">Deepspace</div><div class="logo-desc"> 凡事预 ？立 ：废</div></div><ul class="menu-list mobile-menu-list"><li><a href="/" class="waves-effect waves-light"><i class="fa fa-fw fa-home"></i> 首页</a></li><li><a href="/tags" class="waves-effect waves-light"><i class="fa fa-fw fa-tags"></i> 标签</a></li><li><a href="/categories" class="waves-effect waves-light"><i class="fa fa-fw fa-bookmark"></i> 分类</a></li><li><a href="/archives" class="waves-effect waves-light"><i class="fa fa-fw fa-archive"></i> 归档</a></li><li><a href="/about" class="waves-effect waves-light"><i class="fa fa-fw fa-user-circle-o"></i> 关于</a></li><li><div class="divider"></div></li><li><a href="https://github.com/IDeepspace" class="waves-effect waves-light" target="_blank"><i class="fa fa-github-square fa-fw"></i> Fork Me</a></li></ul><div class="social-link"><a href="https://github.com/IDeepspace" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fa fa-github"></i></a><a href="mailto:cxin1427@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fa fa-envelope-open"></i></a><a href="#!" class="tooltipped" data-tooltip="QQ: 690862036" data-position="top" data-delay="50"><i class="fa fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fa fa-rss"></i></a></div></div></div></div><style>.nav-transparent .github-corner{display:none!important}.github-corner{position:absolute;z-index:10;top:0;right:0;border:0;transform:scale(1.1)}.github-corner svg{color:#0f9d58;fill:#fff;height:64px;width:64px}.github-corner:hover .octo-arm{animation:a .56s ease-in-out}.github-corner .octo-arm{animation:none}@keyframes a{0%,to{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}</style> <a href="https://github.com/IDeepspace" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50"><svg viewbox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"/><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"/><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z" fill="currentColor" class="octo-body"/></svg></a></nav></header><div class="bg-cover post-cover" style="background-image:url(/medias/featureimages/winter.jpg)"><div class="container"><div class="row"><div class="col s12 m12 l12"><div class="brand"><div class="description center-align post-detail-title"> vue-cli 构建 vue 项目详解</div></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.css"><style>#articleContent h1,#articleContent h2,#articleContent h3,#articleContent h4,#articleContent h5,#articleContent h6{padding-top:76px;margin-top:-76px}#articleContent h1{line-height:3.5rem}#articleContent h2{line-height:3.2rem}#articleContent h3{line-height:2.8rem}#articleContent h4{line-height:2.5rem}#articleContent h5{line-height:2.2rem}#articleContent h6{line-height:1.9rem}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px}#toc-content .is-active-link{color:#42b983}#toc-content .is-active-link::before{background-color:#42b983}</style><div class="row"><div class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="article-tag"> <a href="/tags/vue/" target="_blank"><span class="chip bg-color">vue</span></a> <a href="/tags/vue-cli/" target="_blank"><span class="chip bg-color">vue-cli</span></a></div><div class="post-info"><span class="post-cate"><i class="fa fa-bookmark fa-fw icon-category"></i> <a href="/categories/Vue/" class="post-category" target="_blank">Vue</a></span><span class="post-date"><i class="fa fa-clock-o fa-fw"></i> 2019-01-21</span></div></div><hr><div class="card-content article-card-content"><div id="articleContent"> <p>构建一个 <code>vue</code> 项目最简单的方式就是使用脚手架工具 <code>vue-cli</code> 。前端的三大框架都有自己的脚手架工具，其作用就是用配置好的模板迅速搭建起一个项目工程来，省去自己配置 <code>webpack</code> 配置文件的基本内容，大大降低了初学者构建项目的难度。这节我们看看如何使用 <code>vue-cli</code> 构建 <code>vue</code> 项目以及对构建项目的具体分析。</p><h3 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h3><p><code>node</code> 和 <code>npm</code> 是必不可少的，这里不再介绍。</p><h4 id="1、安装-vue-cli"><a href="#1、安装-vue-cli" class="headerlink" title="1、安装 vue-cli"></a>1、安装 vue-cli</h4><pre class="language-shell"><code class="language-shell">$ npm install -g vue-cli
+</code></pre><p>检查是否安装成功：</p><pre class="language-shell"><code class="language-shell">$ vue --version
+3.3.0
+</code></pre><a id="more"></a><h4 id="2、构建项目"><a href="#2、构建项目" class="headerlink" title="2、构建项目"></a>2、构建项目</h4><pre class="language-shell"><code class="language-shell">$ vue init webpack hello-vue
+</code></pre><p>初始化的过程中，会有一个交互式的选项让你选择项目的一些配置，根据项目需求选择即可。为了方便后面几篇教程的演示，可以统一选择以下选项：</p><pre class="language-shell"><code class="language-shell">? Project name hello-vue # 项目名称
+? Project description A Vue.js project # 项目描述
+? Author Deepspace <cxin1427 @gmail.com> # 作者
+? Vue build standalone # 运行+编译时
+? Install vue-router? Yes # 安装 vue-router
+? Use ESLint to lint your code? Yes # 使用 ESLint 作为代码规范
+? Pick an ESLint preset Airbnb # 选择 Airbnb 的代码规范
+? Set up unit tests Yes # 安装单元测试
+? Pick a test runner karma # 测试模块
+? Setup e2e tests with Nightwatch? Yes # 安装 e2e 测试
+? Should we run `npm install` for you after the project has been created? (recommended) npm # 包管理器，npm
+</cxin1427></code></pre><p>构建完成之后，会提示构建成功信息：</p><pre class="language-shell"><code class="language-shell"># Project initialization finished!
+# ========================
+
+To get started:
+
+  cd hello-vue
+  npm run dev
+
+Documentation can be found at https://vuejs-templates.github.io/webpack
+</code></pre><h4 id="3、启动项目"><a href="#3、启动项目" class="headerlink" title="3、启动项目"></a>3、启动项目</h4><pre class="language-shell"><code class="language-shell">$ cd hello-vue
+$ npm run dev
+</code></pre><p>项目默认会在 8080 端口启动，如果端口有占用，会自动调整端口。打开浏览器输入：<code>http://localhost:8080</code>，会看到构建的项目的主页：</p><p><img src="../../ImageHosting/Vue/vue-init-project.png" alt="vue-init-project"></p><h4 id="4、目录结构"><a href="#4、目录结构" class="headerlink" title="4、目录结构"></a>4、目录结构</h4><p>使用编辑器打开(推荐使用 <code>VSCode</code>)，下面具体看看目录结构：</p><p><strong><code>package.json</code> :</strong></p><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"</span><span class="token punctuation">,</span>
+        <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"npm run dev"</span><span class="token punctuation">,</span>
+        <span class="token property">"unit"</span><span class="token operator">:</span> <span class="token string">"cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"</span><span class="token punctuation">,</span>
+        <span class="token property">"e2e"</span><span class="token operator">:</span> <span class="token string">"node test/e2e/runner.js"</span><span class="token punctuation">,</span>
+        <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"npm run unit &amp;&amp; npm run e2e"</span><span class="token punctuation">,</span>
+        <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token string">"eslint --ext .js,.vue src test/unit test/e2e/specs"</span><span class="token punctuation">,</span>
+        <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"node build/build.js"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>在 <code>package.json</code> 中，根据我们在构建项目的时候的选项，有以下几个命令。</p><ul><li><code>npm run dev</code> ：项目开发阶段，项目启动的命令；</li><li><code>npm run lint</code> ：使用 <code>eslint</code> 检查代码格式；</li><li><code>npm run test</code>：单元测试和 <code>e2e</code> 测试；</li><li><code>npm run e2e</code> : <code>e2e</code> 测试；</li><li><code>npm run build</code>：开发完成后执行，会把我们的源代码编译成最终的发布代码，生成在项目根目录中的 <code>dist</code> 文件夹下（初始化项目时不会生成）。</li></ul><p><strong><code>config</code>：</strong> 保存一些项目初始化配置。</p><p><strong><code>build</code> ：</strong>里面保存一些 <code>webpack</code> 的初始化配置。</p><p><strong><code>index.html</code> :</strong> 是我们的首页。<code>index</code> 很多时候都被预设为首页，像 <code>index.htm</code>，<code>index.php</code> 等。</p><p><strong><code>src</code> :</strong> 保存项目源代码的地方，我们下面会详细分析该文件夹里的文件。</p><h3 id="二、代码分析"><a href="#二、代码分析" class="headerlink" title="二、代码分析"></a>二、代码分析</h3><p><code>Vue</code> 的核心架构分为两个部分：<strong>路由和组件</strong>，其实 <code>React</code> 也是一样的。我们在切入一个项目的时候，都是从这两个点出发。下面我们具体看看 <code>src</code> 文件夹。</p><h4 id="1、入口文件"><a href="#1、入口文件" class="headerlink" title="1、入口文件"></a>1、入口文件</h4><p>如果我们打开项目根目录下 <code>build</code> 目录中的 <code>webpack.base.conf.js</code>，会看到这样的代码(第22行)：</p><pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  context<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  entry<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    app<span class="token punctuation">:</span> <span class="token string">'./src/main.js'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span>    
+</code></pre><p>说明我们的入口文件就是 <code>src</code> 目录下的 <code>main.js</code> 文件。看看代码：</p><pre class="language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// The Vue build version to load with the `import` command</span>
+<span class="token comment" spellcheck="true">// (runtime-only or standalone) has been set in webpack.base.conf with an alias.</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">'./router'</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* eslint-disable no-new */</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  router<span class="token punctuation">,</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span> App <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token string">'&lt;App/>'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>看看这里面做了什么事情：</p><ul><li>引入 <code>vue</code> 并起名叫作 <code>Vue</code></li><li>引入 根目录下的 <code>App.vue</code> 文件(后缀名可不要)</li><li>引入 <code>router</code> 文件下的 <code>index.js</code> 文件(文件夹后没有具体的文件，默认引入的就是 <code>index.js</code> 文件)</li><li>通过 <code>new</code> 实例化 <code>Vue</code> 实例 ，实例化的时候声明了几个属性：<ul><li><code>el：&#39;#app&#39;</code>：意思是将所有视图放在 <code>id</code> 值为 <code>app</code> 这个 <code>dom</code> 元素中，也就是项目根目录下的 <code>index.html</code> 中的那个 <code>div</code> : <code>&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</code>；</li><li><code>components: { App }</code>：意思是将上面引入的 <code>App.vue</code> 文件的内容将以 <code>&lt;App/&gt;</code> 这样的标签写进 <code>&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</code> 中；</li></ul></li></ul><h4 id="2、App-vue"><a href="#2、App-vue" class="headerlink" title="2、App.vue"></a>2、App.vue</h4><p>通过入口文件中做的事情，我们其实已经知道 <code>App.vue</code> 的作用了：<strong>单页面应用的主组件</strong>。所有页面都是在 <code>App.vue</code> 下通过路由进行切换的。所以，我们可以理解为所有的路由（<code>route</code>）也是 <code>App.vue</code> 的子组件。我们看看代码：</p><pre class="language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">"./assets/logo.png"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">/</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>style<span class="token operator">></span>
+#app <span class="token punctuation">{</span>
+  font<span class="token operator">-</span>family<span class="token punctuation">:</span> <span class="token string">'Avenir'</span><span class="token punctuation">,</span> Helvetica<span class="token punctuation">,</span> Arial<span class="token punctuation">,</span> sans<span class="token operator">-</span>serif<span class="token punctuation">;</span>
+  <span class="token operator">-</span>webkit<span class="token operator">-</span>font<span class="token operator">-</span>smoothing<span class="token punctuation">:</span> antialiased<span class="token punctuation">;</span>
+  <span class="token operator">-</span>moz<span class="token operator">-</span>osx<span class="token operator">-</span>font<span class="token operator">-</span>smoothing<span class="token punctuation">:</span> grayscale<span class="token punctuation">;</span>
+  text<span class="token operator">-</span>align<span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  color<span class="token punctuation">:</span> #2c3e50<span class="token punctuation">;</span>
+  margin<span class="token operator">-</span>top<span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span>
+</code></pre><blockquote><p>这里需要提一下：<code>node</code> 之所以可以识别出 <code>*·vue</code> 格式的文件，是因为 <code>webpack</code> 在编译时将 <code>*.vue</code> 文件中的 <code>html</code> 、<code>js</code> 、<code>css</code> 都抽出来形成新的单独文件。可通过 <code>npm run build</code> 命令编译源代码，查看 <code>dist</code> 文件下的文件来验证。</p></blockquote><p><code>App.vue</code> 的内容分为三个部分：<code>&lt;template&gt;...&lt;/template&gt;</code>、<code>&lt;script&gt;...&lt;/script&gt;</code>、<code>&lt;style&gt;...&lt;/style&gt;</code> ，分别在这三类标签里面写入<strong>结构、脚本、样式</strong>。</p><p>我们先从 <code>&lt;template&gt;</code> 看起：里面一个 <code>div</code> 包裹着 <code>img</code> 标签和 <code>router-view</code> 标签。前面提到过： <strong><code>App.vue</code> 是单页面应用的主组件</strong>。对照着前面在浏览器中打开的应用主页面，<code>img</code> 标签就是页面上方的 <code>Vue</code> 的 <code>logo</code>。那下面的内容去哪了呢？和 <code>&lt;router-view/&gt;</code> 有关系吗？这就要去看路由了。</p><h4 id="3、router-index-js"><a href="#3、router-index-js" class="headerlink" title="3、router/index.js"></a>3、router/index.js</h4><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'vue-router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> HelloWorld <span class="token keyword">from</span> <span class="token string">'@/components/HelloWorld'</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Router<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  routes<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> <span class="token string">'HelloWorld'</span><span class="token punctuation">,</span>
+      component<span class="token punctuation">:</span> HelloWorld<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>前面先引入了路由插件 <code>vue-router</code>，然后显式声明要用路由 <code>Vue.use(Router)</code> 。路由的配置非常地明了：给不同 <code>path</code> 分配不同的组件（或者页面），参数 <code>name</code> 只是用来识别。</p><p>当我访问根路由 <code>http://localhost:8080/#/</code> 时，<code>App.vue</code> 中的 <code>&lt;router-view/&gt;</code> 就会把引入的 <code>HelloWorld</code> 组件分配给我，放在了 <code>img</code> 标签的下面，打开 <code>components</code> 目录下的 <code>HelloWorld.vue</code> 就可以看到具体内容了。</p><blockquote><p>我们在看到浏览器中的 <code>url</code> 的时候会觉得奇怪，为什么在后面加了一个 <code>#</code> 号呢？这是因为 <code>vue-router</code> 默认 <code>hash</code> 模式 —— 使用 <code>URL</code> 的 <code>hash</code> 来模拟一个完整的 <code>URL</code>，当 URL 改变时，页面不会重新加载。详见：<a href="https://router.vuejs.org/zh/guide/essentials/history-mode.html" target="_blank" rel="noopener">https://router.vuejs.org/zh/guide/essentials/history-mode.html</a> 。这里可先跳过这点内容。</p></blockquote><p>现在，我们在浏览器访问 <code>http://localhost:8080/#/vue</code> 这个地址，会发现只出现了 <code>Vue</code> 的 <code>logo</code>。这是因为我们并没有配置 <code>/vue</code> 这个路由，找不到路由，那<code>&lt;router-view/&gt;</code> 这个标签就不会加载出来。</p><p>到这里，我们就知道路由是如何根据 <code>url</code> 来分配不同的组件了。配置多个路由就很简单了：</p><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  routes<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> <span class="token string">'HelloWorld'</span><span class="token punctuation">,</span>
+      component<span class="token punctuation">:</span> HelloWorld
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> <span class="token string">'/about'</span><span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> <span class="token string">'about'</span><span class="token punctuation">,</span>
+      component<span class="token punctuation">:</span> About
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> <span class="token string">'/vue'</span><span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> <span class="token string">'vue'</span><span class="token punctuation">,</span>
+      component<span class="token punctuation">:</span> Vue
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><p>那如果要访问 <code>http://localhost:8080/#/vue/demo</code> 怎么办呢？</p><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  routes<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> <span class="token string">'HelloWorld'</span><span class="token punctuation">,</span>
+      component<span class="token punctuation">:</span> HelloWorld<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> <span class="token string">'/about'</span><span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> <span class="token string">'about'</span><span class="token punctuation">,</span>
+      component<span class="token punctuation">:</span> About<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> <span class="token string">'/vue'</span><span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> <span class="token string">'vue'</span><span class="token punctuation">,</span>
+      component<span class="token punctuation">:</span> Vue<span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          path<span class="token punctuation">:</span> <span class="token string">'/demo'</span><span class="token punctuation">,</span>
+          component<span class="token punctuation">:</span> demo<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          path<span class="token punctuation">:</span> <span class="token string">'project'</span><span class="token punctuation">,</span>
+          component<span class="token punctuation">:</span> project<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>给路由加多一个子路由配置即可。</p><h4 id="4、assets"><a href="#4、assets" class="headerlink" title="4、assets"></a>4、assets</h4><p>用来存放一些图片、样式等静态文件。</p><h3 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h3><p><img src="../../ImageHosting/Vue/vue-core-structure.png" alt="vue-core-structure"></p></div><hr><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.88rem}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{color:#fff}.reward-tabs .wechat-tab .active{color:#fff;background-color:#22ab38}.reward-tabs .alipay-tab .active{color:#fff;background-color:#019fe8}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"> <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close"><i class="fa fa-close"></i></a><h4 class="reward-title">请我喝杯咖啡?</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs"><li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li><li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li></ul><div id="wechat"> <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div><div id="alipay"> <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码"></div></div></div></div></div></div><script>$(function(){$("#reward .reward-link").on("click",function(){$("#rewardModal").openModal()}),$("#rewardModal .close").on("click",function(){$("#rewardModal").closeModal()})})</script><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div></div><script src="/libs/share/js/social-share.min.js"></script><div class="reprint"><p> <span class="reprint-tip">转载请注明:</span> <a href="togoblog.cn" class="b-link-green">Deepspace</a><i class="fa fa-angle-right fa-lg fa-fw text-color"></i> <a href="/vue-cli-init-project-intro/" class="b-link-green">vue-cli 构建 vue 项目详解</a></p></div></div></div><div class="article" data-aos="fade-up"><div class="card relate-article-wrapper"><header class="relate-article-header">相关文章&nbsp;<i class="fa fa-arrow-right"></i></header><div class="relate-post-box"></div></div></div><div class="livere-card card" data-aos="fade-up"><div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC8zODY5My8xNTIyMQ=="><script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script><noscript>为正常使用来必力评论功能请激活JavaScript。</noscript></div></div></div></div><div class="col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title">目录</div><div id="toc-content"></div></div></div></div><script src="/libs/tocbot/tocbot.min.js"></script><script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script></main><footer class="page-footer bg-color"><div class="container row center-align"><div class="col s12 m8 l8 copy-right"> <span>COPYRIGHT 2018 DEEPSPACE. ALL RIGHTS RESERVED.</span></div><div class="col s12 m4 l4 social-link"><a href="https://github.com/IDeepspace" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fa fa-github"></i></a><a href="mailto:cxin1427@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fa fa-envelope-open"></i></a><a href="#!" class="tooltipped" data-tooltip="QQ: 690862036" data-position="top" data-delay="50"><i class="fa fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fa fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"> <span class="title">搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus></div><div id="searchResult"></div></div></div><script src="/js/search.js"></script><script type="text/javascript">searchFunc("/search.xml","searchInput","searchResult")</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fa fa-angle-up"></i></a></div><script src="/libs/materialize/js/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script></body></html>

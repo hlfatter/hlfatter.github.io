@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Deepspace</title>
+  
+  <subtitle>Deepspace</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="togoblog.cn/"/>
+  <updated>2019-01-23T14:11:01.822Z</updated>
+  <id>togoblog.cn/</id>
+  
+  <author>
+    <name>Deepspace</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue-cli 构建 vue 项目详解</title>
+    <link href="togoblog.cn/vue-cli-init-project-intro/"/>
+    <id>togoblog.cn/vue-cli-init-project-intro/</id>
+    <published>2019-01-20T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## vue-cli 构建 vue 项目详解 --&gt;
+&lt;p&gt;构建一个 &lt;code&gt;vue&lt;/code&gt; 项目最简单的方式就是使用脚手架工具 &lt;code&gt;vue-cli&lt;/code&gt; 。前端的三大框架都有自己的脚手架工具，其作用就是用配置好的模板迅速搭建起一个项目工程来，省去自己配置 &lt;code&gt;webpack&lt;/code&gt; 配置文件的基本内容，大大降低了初学者构建项目的难度。这节我们看看如何使用 &lt;code&gt;vue-cli&lt;/code&gt; 构建 &lt;code&gt;vue&lt;/code&gt; 项目以及对构建项目的具体分析。&lt;/p&gt;
+&lt;h3 id=&quot;一、环境搭建&quot;&gt;&lt;a href=&quot;#一、环境搭建&quot; class=&quot;headerlink&quot; title=&quot;一、环境搭建&quot;&gt;&lt;/a&gt;一、环境搭建&lt;/h3&gt;&lt;p&gt;&lt;code&gt;node&lt;/code&gt; 和 &lt;code&gt;npm&lt;/code&gt; 是必不可少的，这里不再介绍。&lt;/p&gt;
+&lt;h4 id=&quot;1、安装-vue-cli&quot;&gt;&lt;a href=&quot;#1、安装-vue-cli&quot; class=&quot;headerlink&quot; title=&quot;1、安装 vue-cli&quot;&gt;&lt;/a&gt;1、安装 vue-cli&lt;/h4&gt;&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;$ npm install -g vue-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;检查是否安装成功：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;$ vue --version
+3.3.0
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Vue" scheme="togoblog.cn/categories/Vue/"/>
+    
+    
+      <category term="vue" scheme="togoblog.cn/tags/vue/"/>
+    
+      <category term="vue-cli" scheme="togoblog.cn/tags/vue-cli/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VSCode插件及配置</title>
+    <link href="togoblog.cn/vscode-plugins-and-configurations/"/>
+    <id>togoblog.cn/vscode-plugins-and-configurations/</id>
+    <published>2019-01-15T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## VSCode插件及配置 --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一直把 &lt;code&gt;VSCode&lt;/code&gt; 作为前端开发编辑器，非常好用。因为装的插件和自定义配置较多，这里做个备份备忘。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;一、插件&quot;&gt;&lt;a href=&quot;#一、插件&quot; class=&quot;headerlink&quot; title=&quot;一、插件&quot;&gt;&lt;/a&gt;一、插件&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;- advanced-new-file
+- Docker
+- ESLint
+- HTML Snippets
+- JavaScript（ES6）code snippets
+- Markdown All in One
+- Material Theme
+- Path Intellisense
+- Prettier - Code formatter
+- React Standard Style code snippets
+- Vetur
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Tool" scheme="togoblog.cn/categories/Tool/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 中的对象拷贝</title>
+    <link href="togoblog.cn/javascript-copy-object/"/>
+    <id>togoblog.cn/javascript-copy-object/</id>
+    <published>2018-12-06T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## JavaScript 中的对象拷贝--&gt;
+&lt;blockquote&gt;
+&lt;p&gt;翻译自：原文链接：&lt;a href=&quot;https://smalldata.tech/blog/2018/11/01/copying-objects-in-javascript&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;copying-objects-in-javascript&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;这篇文章我们将会说说  &lt;code&gt;Javascript&lt;/code&gt;  中对象拷贝的几种方式，我们会仔细探究深拷贝（&lt;code&gt;deep coping&lt;/code&gt;）和浅拷贝（&lt;code&gt;shallow coping&lt;/code&gt;）。&lt;/p&gt;
+&lt;p&gt;在文章开始之前，先提一下一些基础知识：在 &lt;code&gt;Javascript&lt;/code&gt;  中，对象只是指向内存中某个位置的指针。这些指针是可变的，也就是说，它们可以重新被赋值。因此，如果我们单单简单地复制这个指针，&lt;strong&gt;那就可能造成有两个指针指向内存中的同一块地址的结果。&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="togoblog.cn/categories/JavaScript/"/>
+    
+    
+      <category term="对象拷贝" scheme="togoblog.cn/tags/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6 —— Promise</title>
+    <link href="togoblog.cn/es6-promise/"/>
+    <id>togoblog.cn/es6-promise/</id>
+    <published>2018-06-28T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.806Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ### 一、Promise 是什么？ --&gt;
+&lt;p&gt;阮一峰老师的 &lt;a href=&quot;http://es6.ruanyifeng.com/#docs/promise&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ES6 Promise&lt;/a&gt; 文章里，把 &lt;code&gt;Promise&lt;/code&gt; 介绍地很详细。这里再整理一下，加深理解。&lt;/p&gt;
+&lt;p&gt;学习一个东西，得先知道它是什么。我们先在浏览器中使用 &lt;code&gt;console.dir(Promise)&lt;/code&gt; 打印出 &lt;code&gt;Promise&lt;/code&gt; 对象的所的属性和方法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../ImageHosting/JavaScript/promise.png&quot; alt=&quot;Promise&quot;&gt;&lt;/p&gt;
+&lt;p&gt;从打印结果可以看出，&lt;code&gt;Promise&lt;/code&gt; 是一个构造函数，它自己本身有 &lt;code&gt;all&lt;/code&gt;、&lt;code&gt;reject&lt;/code&gt;、&lt;code&gt;resolve&lt;/code&gt; 等方法，原型上有 &lt;code&gt;catch&lt;/code&gt;、&lt;code&gt;finally&lt;/code&gt;、&lt;code&gt;then&lt;/code&gt; 等方法。所以 &lt;code&gt;new&lt;/code&gt; 出来的 &lt;code&gt;Promise&lt;/code&gt; 对象也就自然拥有 &lt;code&gt;catch&lt;/code&gt;、&lt;code&gt;finally&lt;/code&gt;、&lt;code&gt;then&lt;/code&gt; 这些方法。从上图中可以看到，&lt;code&gt;then&lt;/code&gt; 方法返回的是一个新的 &lt;code&gt;Promise&lt;/code&gt; 实例（注意，不是原来那个 &lt;code&gt;Promise&lt;/code&gt; 实例）。因此可以采用链式写法，即 &lt;code&gt;then&lt;/code&gt; 方法后面再调用另一个 &lt;code&gt;then&lt;/code&gt; 方法。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Promise&lt;/code&gt; 的中文意思是承诺，这种&lt;strong&gt;“承诺将来会执行”&lt;/strong&gt;的对象在 &lt;code&gt;JavaScript&lt;/code&gt; 中称为 &lt;code&gt;Promise&lt;/code&gt; 对象。简单说就是一个容器，里面保存着某个未来才会执行的事件（通常是一个异步操作）的结果。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="togoblog.cn/categories/JavaScript/"/>
+    
+    
+      <category term="ES6" scheme="togoblog.cn/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何使用 Docker-Compose 部署 WordPress</title>
+    <link href="togoblog.cn/docker-wordpress/"/>
+    <id>togoblog.cn/docker-wordpress/</id>
+    <published>2018-05-11T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.806Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## 如何使用 Docker-Compose 部署 WordPress --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;准备：腾讯云服务器：centos 7.5&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;部署工具：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Docker&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Docker Compose&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WordPress&lt;/code&gt; 和 &lt;code&gt;MySql5.7&lt;/code&gt; (运行在 Docker 容器中)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;一、安装-Docker&quot;&gt;&lt;a href=&quot;#一、安装-Docker&quot; class=&quot;headerlink&quot; title=&quot;一、安装 Docker&quot;&gt;&lt;/a&gt;一、安装 Docker&lt;/h3&gt;&lt;h4 id=&quot;1、卸载旧版本（重装的新系统可跳过）&quot;&gt;&lt;a href=&quot;#1、卸载旧版本（重装的新系统可跳过）&quot; class=&quot;headerlink&quot; title=&quot;1、卸载旧版本（重装的新系统可跳过）&quot;&gt;&lt;/a&gt;1、卸载旧版本（重装的新系统可跳过）&lt;/h4&gt;&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;$ sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-selinux \
+                  docker-engine-selinux \
+                  docker-engine
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Docker" scheme="togoblog.cn/categories/Docker/"/>
+    
+    
+      <category term="Docker-Compose" scheme="togoblog.cn/tags/Docker-Compose/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何提问？</title>
+    <link href="togoblog.cn/how-to-ask-a-question/"/>
+    <id>togoblog.cn/how-to-ask-a-question/</id>
+    <published>2018-02-11T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## 如何提问？ --&gt;
+&lt;p&gt;How to ask a question?&lt;br&gt;&lt;img src=&quot;../../ImageHosting/Tools/howtoask.png&quot; alt=&quot;如何提问&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Tool" scheme="togoblog.cn/categories/Tool/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Redux 基础知识</title>
+    <link href="togoblog.cn/redux-basic/"/>
+    <id>togoblog.cn/redux-basic/</id>
+    <published>2017-10-11T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## Redux 基础知识 --&gt;
+&lt;p&gt;核心思想：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(1)Web 应用是一个状态机，视图与状态是一一对应的。
+(2)Redux 专注于状态管理，把所有的状态都存在一个对象中。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;核心概念包括：&lt;code&gt;store&lt;/code&gt;、&lt;code&gt;state&lt;/code&gt;、&lt;code&gt;action&lt;/code&gt;、&lt;code&gt;reducer&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="togoblog.cn/categories/React/"/>
+    
+    
+      <category term="React" scheme="togoblog.cn/tags/React/"/>
+    
+      <category term="Redux" scheme="togoblog.cn/tags/Redux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 基础知识</title>
+    <link href="togoblog.cn/react-basic/"/>
+    <id>togoblog.cn/react-basic/</id>
+    <published>2017-08-11T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## React 基础知识点讲解 --&gt;
+&lt;h3 id=&quot;零、介绍&quot;&gt;&lt;a href=&quot;#零、介绍&quot; class=&quot;headerlink&quot; title=&quot;零、介绍&quot;&gt;&lt;/a&gt;零、介绍&lt;/h3&gt;&lt;p&gt;&lt;code&gt;React.js&lt;/code&gt; 是一个帮助你构建页面 &lt;code&gt;UI&lt;/code&gt; 的库。如果你熟悉 &lt;code&gt;MVC&lt;/code&gt; 概念的话，那么 &lt;code&gt;React&lt;/code&gt; 的组件就相当于 &lt;code&gt;MVC&lt;/code&gt; 里面的 &lt;code&gt;View&lt;/code&gt;。如果你不熟悉也没关系，你可以简单地理解为，&lt;code&gt;React.js&lt;/code&gt;将帮助我们将界面分成了各个独立的小块，每一个块就是组件，这些组件之间可以组合、嵌套，就成了我们的页面。&lt;/p&gt;
+&lt;p&gt;一个组件的显示形态和行为有可能是由某些数据决定的。而数据是可能发生改变的，这时候组件的显示形态就会发生相应的改变。而 &lt;code&gt;React.js&lt;/code&gt; 也提供了一种非常高效的方式帮助我们做到了数据和组件显示形态之间的同步。&lt;/p&gt;
+&lt;p&gt;React.js 不是一个框架，它只是一个库。它只提供 &lt;code&gt;UI （view&lt;/code&gt;）层面的解决方案。在实际的项目当中，它并不能解决我们所有的问题，需要结合其它的库，例如 &lt;code&gt;Redux&lt;/code&gt;、&lt;code&gt;React-router&lt;/code&gt; 等来协助提供完整的解决方法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="togoblog.cn/categories/React/"/>
+    
+    
+      <category term="React" scheme="togoblog.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 高阶组件</title>
+    <link href="togoblog.cn/react-high-order-component/"/>
+    <id>togoblog.cn/react-high-order-component/</id>
+    <published>2017-08-11T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## React 高阶组件 --&gt;
+&lt;p&gt;高阶组件 &lt;code&gt;（HOC）&lt;/code&gt; 是 &lt;code&gt;react&lt;/code&gt; 中对组件逻辑进行重用的高级技术。高阶组件本身并不是 React API，它只是一种模式，这种模式是由 react 自身的组合性质产生的。&lt;/p&gt;
+&lt;p&gt;具体而言， &lt;strong&gt;高阶组件就是一个函数（而不是组件），且该函数接受一个你传递给它的组件作为参数，并返回一个新的组件&lt;/strong&gt; 。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;jsx&quot;&gt;const NewComponent = higherOrderComponent(OldComponent);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;一、定义高阶组件&quot;&gt;&lt;a href=&quot;#一、定义高阶组件&quot; class=&quot;headerlink&quot; title=&quot;一、定义高阶组件&quot;&gt;&lt;/a&gt;一、定义高阶组件&lt;/h3&gt;&lt;p&gt;我们来看一个很简单的高级组件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;jsx&quot;&gt;import React, { Component } from &amp;#39;react&amp;#39;;
+
+export default WrappedComponent =&amp;gt; {
+  class NewComponent extends Component {
+    // do some things
+    render() {
+      return &amp;lt;WrappedComponent /&amp;gt;;
+    }
+  }
+  return NewComponent;
+};
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="togoblog.cn/categories/React/"/>
+    
+    
+      <category term="React" scheme="togoblog.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何使用 Gitbook 来做笔记?</title>
+    <link href="togoblog.cn/notes-with-gitbook/"/>
+    <id>togoblog.cn/notes-with-gitbook/</id>
+    <published>2017-06-02T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## 如何使用 Gitbook 来做笔记? --&gt;
+&lt;p&gt;根据&lt;a href=&quot;https://github.com/GitbookIO/gitbook/blob/master/docs/setup.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官网说明&lt;/a&gt; 第一步，先安装&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ npm install gitbook-cli -g
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后，创建一个笔记文件夹&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ mkdir my-note
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Tool" scheme="togoblog.cn/categories/Tool/"/>
+    
+    
+      <category term="Gitbook" scheme="togoblog.cn/tags/Gitbook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Express + Mongoose 实现增删改查</title>
+    <link href="togoblog.cn/express-mongoose/"/>
+    <id>togoblog.cn/express-mongoose/</id>
+    <published>2017-03-11T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## Express + Mongoose 实现增删改查 --&gt;
+&lt;p&gt;&lt;code&gt;Express&lt;/code&gt; 是一个基于 &lt;code&gt;Node.js&lt;/code&gt; 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用，实现对数据库的增删查改。&lt;/p&gt;
+&lt;p&gt;数据库我们选择 &lt;code&gt;MongoDB&lt;/code&gt;，它是一个基于分布式文件存储的开源数据库系统，&lt;code&gt;Mongoose&lt;/code&gt; 是在 &lt;code&gt;node.js&lt;/code&gt; 异步环境下对 &lt;code&gt;mongodb&lt;/code&gt; 进行便捷操作的对象模型工具 。&lt;/p&gt;
+&lt;p&gt;接下来我们使用 &lt;code&gt;Express + Mongoose&lt;/code&gt; 来实现简单的增删查改功能。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="togoblog.cn/categories/JavaScript/"/>
+    
+    
+      <category term="Express" scheme="togoblog.cn/tags/Express/"/>
+    
+      <category term="Mongoose" scheme="togoblog.cn/tags/Mongoose/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6 —— 箭头函数 Arrow Functions</title>
+    <link href="togoblog.cn/es6-arrow-functions/"/>
+    <id>togoblog.cn/es6-arrow-functions/</id>
+    <published>2017-02-17T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.806Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## ES6 —— 箭头函数 Arrow Functions --&gt;
+&lt;p&gt;ES6 中引入了一种编写函数的新语法 —- 箭头函数 Arrow Functions&lt;/p&gt;
+&lt;h4 id=&quot;一-箭头函数产生的目的&quot;&gt;&lt;a href=&quot;#一-箭头函数产生的目的&quot; class=&quot;headerlink&quot; title=&quot;一. 箭头函数产生的目的&quot;&gt;&lt;/a&gt;一. 箭头函数产生的目的&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;简洁语法&lt;/li&gt;
+&lt;li&gt;与父作用域共享关键字&lt;code&gt;this&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;二-箭头函数的优点&quot;&gt;&lt;a href=&quot;#二-箭头函数的优点&quot; class=&quot;headerlink&quot; title=&quot;二. 箭头函数的优点&quot;&gt;&lt;/a&gt;二. 箭头函数的优点&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;使用箭头函数比普通函数少些动词，如：&lt;code&gt;function&lt;/code&gt;或 &lt;code&gt;return&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;this&lt;/code&gt;提前定义，从上下文可以捕获&lt;code&gt;this&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当你只需要一个只有一个参数的简单函数时，可以使用新标准中的箭头函数，它的语法非常简单：&lt;code&gt;标识符=&amp;gt;表达式&lt;/code&gt;。你无需输入 &lt;code&gt;function&lt;/code&gt;和 &lt;code&gt;return&lt;/code&gt;，一些小括号、大括号以及分号也可以省略。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="togoblog.cn/categories/JavaScript/"/>
+    
+    
+      <category term="ES6" scheme="togoblog.cn/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6 —— 数组的拓展</title>
+    <link href="togoblog.cn/es6-array/"/>
+    <id>togoblog.cn/es6-array/</id>
+    <published>2017-02-10T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.806Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## ES6 —— 数组的拓展 --&gt;
+&lt;h4 id=&quot;一-Array-from&quot;&gt;&lt;a href=&quot;#一-Array-from&quot; class=&quot;headerlink&quot; title=&quot;一 . Array.from()&quot;&gt;&lt;/a&gt;一 . Array.from()&lt;/h4&gt;&lt;p&gt;&lt;code&gt;Array.from&lt;/code&gt;方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）&lt;/p&gt;
+&lt;p&gt;下面是一个类似数组的对象，&lt;code&gt;Array.from&lt;/code&gt;将它转为真正的数组。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;let arrayLike = {
+  &amp;#39;0&amp;#39;: &amp;#39;a&amp;#39;,
+  &amp;#39;1&amp;#39;: &amp;#39;b&amp;#39;,
+  &amp;#39;2&amp;#39;: &amp;#39;c&amp;#39;,
+  length: 3
+};
+
+// ES5的写法
+var arr1 = [].slice.call(arrayLike); // [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;]
+
+// ES6的写法
+let arr2 = Array.from(arrayLike); // [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;]
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="togoblog.cn/categories/JavaScript/"/>
+    
+    
+      <category term="ES6" scheme="togoblog.cn/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6 —— 模板字符串</title>
+    <link href="togoblog.cn/es6-string/"/>
+    <id>togoblog.cn/es6-string/</id>
+    <published>2017-01-31T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.806Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## ES6 —— 模板字符串 --&gt;
+&lt;p&gt;我们知道, 在传统的 JavaScript 语言，输出模板通常是这样写的 , 需要用&lt;code&gt;+&lt;/code&gt;来拼接 :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;$(&amp;#39;#result&amp;#39;).append(
+  &amp;#39;There are &amp;lt;b&amp;gt;&amp;#39; +
+    basket.count +
+    &amp;#39;&amp;lt;/b&amp;gt; &amp;#39; +
+    &amp;#39;items in your basket, &amp;#39; +
+    &amp;#39;&amp;lt;em&amp;gt;&amp;#39; +
+    basket.onSale +
+    &amp;#39;&amp;lt;/em&amp;gt; are on sale!&amp;#39;
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上面这种写法相当繁琐不方便.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="togoblog.cn/categories/JavaScript/"/>
+    
+    
+      <category term="ES6" scheme="togoblog.cn/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6 —— Set 和 Map 的数据结构</title>
+    <link href="togoblog.cn/es6-set-map/"/>
+    <id>togoblog.cn/es6-set-map/</id>
+    <published>2017-01-27T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.806Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## ES6 —— Set 和 Map 的数据结构 --&gt;
+&lt;h3 id=&quot;一-Set&quot;&gt;&lt;a href=&quot;#一-Set&quot; class=&quot;headerlink&quot; title=&quot;一 . Set&quot;&gt;&lt;/a&gt;一 . Set&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ES6&lt;/code&gt; 提供了新的数据结构 &lt;code&gt;Set&lt;/code&gt; 。它类似于数组，但是成员的值都是唯一的，没有重复的值。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Set&lt;/code&gt; 本身是一个构造函数，用来生成 &lt;code&gt;Set&lt;/code&gt; 数据结构。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;const s = new Set();
+
+[2, 3, 5, 4, 5, 2, 2].forEach(x =&amp;gt; s.add(x));
+
+for (let i of s) {
+  console.log(i);
+}
+// 2
+// 3
+// 5
+// 4
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="togoblog.cn/categories/JavaScript/"/>
+    
+    
+      <category term="ES6" scheme="togoblog.cn/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 原型链和原型继承</title>
+    <link href="togoblog.cn/es6-proptype-chain/"/>
+    <id>togoblog.cn/es6-proptype-chain/</id>
+    <published>2017-01-27T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## JavaScript 原型链和原型继承 --&gt;
+&lt;p&gt;JavaScript 中最难最繁复的一个知识点应该就是原型继承, 要说清楚原型继承，就得先了解清楚什么是原型链。&lt;/p&gt;
+&lt;h3 id=&quot;一-原型链&quot;&gt;&lt;a href=&quot;#一-原型链&quot; class=&quot;headerlink&quot; title=&quot;一.原型链&quot;&gt;&lt;/a&gt;一.原型链&lt;/h3&gt;&lt;p&gt;在写 JavaScript 的时候，我们经常会写出下面的代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const arr = [1, 2, 3];
+arr.push(4); // 4
+
+const string = &amp;#39;Deepspace&amp;#39;;
+string.slice(1);//eepspace
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;那么我们会不会觉得很奇怪, 为什么我好端端的创建一个数组或者字符串，莫名其妙地就有了 &lt;code&gt;.push&lt;/code&gt;, &lt;code&gt;.slice&lt;/code&gt; 这些方法呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="togoblog.cn/categories/JavaScript/"/>
+    
+    
+      <category term="ES6" scheme="togoblog.cn/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6 —— let 和 const</title>
+    <link href="togoblog.cn/es6-let-const/"/>
+    <id>togoblog.cn/es6-let-const/</id>
+    <published>2017-01-27T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.806Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## ES6 —— let 和 const --&gt;
+&lt;h4 id=&quot;零、块级作用域&quot;&gt;&lt;a href=&quot;#零、块级作用域&quot; class=&quot;headerlink&quot; title=&quot;零、块级作用域&quot;&gt;&lt;/a&gt;零、块级作用域&lt;/h4&gt;&lt;p&gt;在学习 &lt;code&gt;let&lt;/code&gt; 和 &lt;code&gt;const&lt;/code&gt; 之前，我们不得不谈一谈 &lt;code&gt;ES5&lt;/code&gt; 的块级作用域，理解为什么要在 &lt;code&gt;ES6&lt;/code&gt; 引入 &lt;code&gt;let&lt;/code&gt; 和 &lt;code&gt;const&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;我们都知道：&lt;strong&gt;通过 &lt;code&gt;var&lt;/code&gt; 声明的变量存在变量提升的特性。&lt;/strong&gt; 看看下面的示例代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;if (condition) {
+    var value = 1;
+}
+console.log(value);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们可能会觉得只有 &lt;code&gt;condition&lt;/code&gt; 为 &lt;code&gt;true&lt;/code&gt; 的时候，才会创建 &lt;code&gt;value&lt;/code&gt;，如果 &lt;code&gt;condition&lt;/code&gt; 为 &lt;code&gt;false&lt;/code&gt;，程序就不会走到 &lt;code&gt;if&lt;/code&gt; 里面，结果是程序报错：&lt;code&gt;ReferenceError: value is not defined&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;但是，因为变量提升的原因，实际代码相当于：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var value;
+if (condition) {
+    value = 1;
+}
+console.log(value);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果 &lt;code&gt;condition&lt;/code&gt; 为 &lt;code&gt;false&lt;/code&gt; ，结果会是 &lt;code&gt;undefined&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;除此之外，在 &lt;code&gt;for&lt;/code&gt; 循环中：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;function test() {
+  for (var i = 0; i &amp;lt; 3; i++) {
+    //...
+  }
+  console.log(i);
+}
+test();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;即便循环已经结束了，我们依然可以访问 &lt;code&gt;i&lt;/code&gt; 的值。&lt;/p&gt;
+&lt;p&gt;为了加强对变量生命周期的控制，&lt;code&gt;ECMAScript 6&lt;/code&gt; 引入了块级作用域。&lt;/p&gt;
+&lt;p&gt;块级作用域存在于：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;函数内部&lt;/li&gt;
+&lt;li&gt;块中(字符 { 和 } 之间的区域)&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="togoblog.cn/categories/JavaScript/"/>
+    
+    
+      <category term="ES6" scheme="togoblog.cn/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS 面向对象(一)</title>
+    <link href="togoblog.cn/js-oo-1/"/>
+    <id>togoblog.cn/js-oo-1/</id>
+    <published>2016-10-27T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## JS 面向对象(一) --&gt;
+&lt;h3 id=&quot;一、什么是面向对象编程？&quot;&gt;&lt;a href=&quot;#一、什么是面向对象编程？&quot; class=&quot;headerlink&quot; title=&quot;一、什么是面向对象编程？&quot;&gt;&lt;/a&gt;一、什么是面向对象编程？&lt;/h3&gt;&lt;p&gt;维基百科上是这样说的&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Object-oriented programming (OOP) is a programming paradigm based on the concept of “objects”, which may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;翻译一下：面向对象编程是一套基于“对象”这个概念的编程方法论。一个对象中会包含数据，通常叫“属性”，也会包含一些函数，通常叫方法。&lt;/p&gt;
+&lt;h4 id=&quot;1-class-和-object&quot;&gt;&lt;a href=&quot;#1-class-和-object&quot; class=&quot;headerlink&quot; title=&quot;1.class 和 object&quot;&gt;&lt;/a&gt;1.class 和 object&lt;/h4&gt;&lt;p&gt;object 就是对象的英文，class 中文翻译为”类”，这两个概念是面向对象编程的最重要的概念。对象是类的实例化，例如人是一个类，人有名字这个属性，但是没有具体值。 把人这个类实例化成一个具体的人，给这个人具体赋值，这个具体的人，就是一个对象，对象中就有了实际的数据值了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="togoblog.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="togoblog.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo+Github 搭建博客教程</title>
+    <link href="togoblog.cn/create-blog-site-with-hexo/"/>
+    <id>togoblog.cn/create-blog-site-with-hexo/</id>
+    <published>2016-10-11T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.806Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## Hexo+Github 搭建博客教程 --&gt;
+&lt;blockquote&gt;
+&lt;p&gt; github 有一个非常强大的功能 —— &lt;strong&gt;GitHub Page&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GitHub Pages 有以下几个优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;轻量级的博客系统，没有麻烦的配置&lt;/li&gt;
+&lt;li&gt;免费空间，享受 Git 版本管理功能&lt;/li&gt;
+&lt;li&gt;使用标记语言，比如 Markdown&lt;/li&gt;
+&lt;li&gt;无需自己搭建服务器&lt;/li&gt;
+&lt;li&gt;可以绑定自己的域名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当然他也有缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;搭配模板系统，相当于静态页发布，每运行生成一次都必须遍历全部的文本文件，网站越大，生成时间越长&lt;/li&gt;
+&lt;li&gt;动态程序的部分相当局限，比如没有评论，不过有解决方案&lt;/li&gt;
+&lt;li&gt;基于 Git，很多东西需要定制，不像 Wordpress 有强大的后台&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;要想搭建漂亮的 blog，还需要模板系统，官方推荐的是 jekyll，但是配置稍复杂，我们使用另一个选择 —— &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;hexo&lt;/a&gt;，一个简单地、轻量地、基于 Node 的一个静态博客框架。&lt;/p&gt;
+&lt;p&gt;下面介绍下如何使用 hexo + github pages 搭建个人博客 。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="togoblog.cn/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="togoblog.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo博客－性能优化之静态文件压缩</title>
+    <link href="togoblog.cn/hexo-performance-optimization/"/>
+    <id>togoblog.cn/hexo-performance-optimization/</id>
+    <published>2016-10-11T16:00:00.000Z</published>
+    <updated>2019-01-23T14:11:01.806Z</updated>
+    
+    <summary type="html">
+    
+      &lt;!-- ## Hexo博客－性能优化之静态文件压缩 --&gt;
+&lt;h3 id=&quot;使用Gulp优化Hexo&quot;&gt;&lt;a href=&quot;#使用Gulp优化Hexo&quot; class=&quot;headerlink&quot; title=&quot;使用Gulp优化Hexo&quot;&gt;&lt;/a&gt;使用Gulp优化Hexo&lt;/h3&gt;&lt;h4 id=&quot;1-安装依赖&quot;&gt;&lt;a href=&quot;#1-安装依赖&quot; class=&quot;headerlink&quot; title=&quot;1.安装依赖&quot;&gt;&lt;/a&gt;1.安装依赖&lt;/h4&gt;&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;$ npm install gulp gulp-uglify gulp-clean-css gulp-htmlmin gulp-htmlclean gulp-imagemin gulp-concat --save-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果安装的依赖和已经存在的依赖有冲突 , 可在 &lt;code&gt;package.json&lt;/code&gt; 中添加以下开发依赖 :&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;&amp;quot;devDependencies&amp;quot;: {
+    &amp;quot;gulp&amp;quot;: &amp;quot;^3.9.1&amp;quot;,
+    &amp;quot;gulp-concat&amp;quot;: &amp;quot;^2.6.1&amp;quot;,
+    &amp;quot;gulp-htmlclean&amp;quot;: &amp;quot;^2.7.15&amp;quot;,
+    &amp;quot;gulp-htmlmin&amp;quot;: &amp;quot;^3.0.0&amp;quot;,
+    &amp;quot;gulp-imagemin&amp;quot;: &amp;quot;^3.3.0&amp;quot;,
+    &amp;quot;gulp-clean-css&amp;quot;: &amp;quot;^2.3.2&amp;quot;,
+    &amp;quot;gulp-uglify&amp;quot;: &amp;quot;^3.0.0&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="togoblog.cn/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="togoblog.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
